@@ -1,0 +1,25 @@
+nav {
+    display: inline-block;
+    width: 100%;
+    background-color: deepskyblue;
+    margin: 0;
+    padding: 0;
+}
+nav * {
+    display: inline;
+}
+nav > * {
+    padding-left: 1em;
+}
+li {
+    padding-right: 1em;
+}
+ul:first-child {
+    float: left;
+}
+ul:last-child{
+    float: right;
+}
+h1 {
+
+}
