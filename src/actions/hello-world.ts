@@ -2,6 +2,6 @@
 function check(value: string) {
     return value
 }
-export const hello = function (name: string)  {
- return `Hello ${check(name)}`
+export const hello = function (name: string):string  {
+ return `Hello ${check(name)} 2`
 }

@@ -4,7 +4,7 @@ export type disp = (obj: object) => void
 
 export const loading = (name:string) => {
     return (dispatch: disp) => {
-        console.log("src/actions/app loading",hello("world"))
+        console.log("src/actions/app loading",hello(""))
         return dispatch({type:"App.LOADING",name})
     }
 }
