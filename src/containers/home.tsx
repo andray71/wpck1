@@ -46,9 +46,7 @@ function mapStateToProps(state:{app:AppStore}) {
     };
 }
 function mapDispatchToProps (dispatch:Dispatch, ownProps:{}) {
-    const bac = bindActionCreators(actions, dispatch)
-    console.log("src/containers/home mapDispatchToProps", bac)
-    return bac
+    return bindActionCreators(actions, dispatch)
 }
 
 export default connect(

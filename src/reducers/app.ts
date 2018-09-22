@@ -20,7 +20,7 @@ export default (
                 name: action.payload.name,
                 count:++state.count,
             }
-        case "App.LOADED":
+        case actions.LOADED:
             return {
                 ...state,
                 state: "Loaded",
