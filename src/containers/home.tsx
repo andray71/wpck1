@@ -4,19 +4,21 @@ import {bindActionCreators,Dispatch} from 'redux'
 import {History} from 'history'
 import Page from './page/page'
 import * as actions from '../actions/app'
-
+import {nameAction} from '../actions/types'
 interface AppStore {
     count: number,
     state: string
 }
+
 export interface Props {
-    loading: ()=>void,
-    loaded: ()=>void,
+    loading: nameAction,
+    loaded: nameAction,
     app: AppStore,
     history: History
 }
+type State = {}
 
-class Home extends React.Component<Props,{}> {
+class Home extends React.Component<Props> {
 
     componentDidMount() {
         this.props.loading()
@@ -24,7 +26,6 @@ class Home extends React.Component<Props,{}> {
             this.props.loaded()
         },2000)
     }
-
 
     render() {
         console.log(this.props)
@@ -50,14 +51,10 @@ function mapDispatchToProps (dispatch:Dispatch, ownProps:{}) {
     return bac
 }
 
-
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(
-// @ts-ignore
- Home
-);
+)(Home);
 
 
 

@@ -1,16 +1,16 @@
+import {Dispatch} from 'redux'
 import {hello} from "./hello-world"
+import {nameAction} from "./types";
+import { actions } from "./actionTypes";
 
-export type disp = (obj: object) => void
-
-export const loading = (name:string) => {
-    return (dispatch: disp) => {
-        console.log("src/actions/app loading",hello(""))
-        return dispatch({type:"App.LOADING",name})
+export const loading:nameAction = (name?:string) => {
+    return (dispatch: Dispatch) => {
+        console.log("src/actions/app loading",hello(name?name:""),actions)
+        return dispatch({type:actions.LOADING,payload:{name}})
     }
 }
-export const loaded = (name:string) => {
-    return (dispatch: disp) => {
-        return dispatch({type:"App.LOADED",name})
+export const loaded:nameAction = (name?:string) => {
+    return (dispatch: Dispatch) => {
+        return dispatch({type:actions.LOADED,payload:{name}})
     }
 }
-
