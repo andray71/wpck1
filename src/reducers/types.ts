@@ -1,4 +1,4 @@
 export type actionType = {
-    type: String,
+    type: string,
     payload?: any
 }

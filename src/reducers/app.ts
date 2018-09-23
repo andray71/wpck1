@@ -7,6 +7,10 @@ export interface State {
     count:number,
     error?: {message:string},
 }
+
+const setState = (state: State, type:string): State => {
+    return {...state,state:stripNS(type)}
+}
 const initState: State = {state:"INITIAL",
     name:"not set",
     count:0,
@@ -22,22 +26,18 @@ export default (state:State = initState ,action: actionType): State => {
         }
         case actions.ERROR:{
             return {
-                ...state,
-                state: stripNS(action.type),
+                ...setState(state,action.type),
                 error: action.payload.error
             }
         }
         case actions.LOADING:
             return {
-                ...state,
-                state: stripNS(action.type),
+                ...setState(state,action.type),
                 name: action.payload.name||state.name,
-
             }
         case actions.LOADED:
             return {
-                ...state,
-                state: stripNS(action.type),
+                ...setState(state,action.type),
                 name: action.payload.name||state.name,
             }
         default:
