@@ -1,7 +1,7 @@
 import {Dispatch} from 'redux'
 import {actionCreator} from './types'
 import {nameAction, noArgsAction} from "./types";
-import { actions } from "./actionTypes";
+import {appActions as actions } from "./actionTypes";
 import {hello} from "./hello-world"
 
 export const loading:nameAction = (name?:string) => {
