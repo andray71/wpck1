@@ -4,7 +4,7 @@ import {bindActionCreators,Dispatch} from 'redux'
 import {History} from 'history'
 import Page from './page/page'
 import * as actions from '../actions/app'
-import {nameAction} from '../actions/types'
+import {nameAction, noArgsAction} from '../actions/types'
 interface AppStore {
     count: number,
     state: string
@@ -13,6 +13,8 @@ interface AppStore {
 export interface Props {
     loading: nameAction,
     loaded: nameAction,
+    increment:noArgsAction,
+    decrement:noArgsAction,
     app: AppStore,
     history: History
 }
@@ -36,6 +38,8 @@ class Home extends React.Component<Props> {
                 onClick={() => this.props.history.push("/about")}
             >about
             </button>
+            <button onClick={this.props.increment}>Increment</button>
+            <button onClick={this.props.decrement}>Increment</button>
         </Page>;
     }
 }
