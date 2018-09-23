@@ -39,7 +39,7 @@ class Home extends React.Component<Props> {
             >about
             </button>
             <button onClick={this.props.increment}>Increment</button>
-            <button onClick={this.props.decrement}>Increment</button>
+            <button onClick={this.props.decrement}>Decrement</button>
         </Page>;
     }
 }
