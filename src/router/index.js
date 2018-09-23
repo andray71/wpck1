@@ -22,8 +22,8 @@ class RouterContainer extends Component {
     }
 }
 
-RouterContainer.propTypes = {
-};
+// RouterContainer.propTypes = {
+// };
 
 
 export default  RouterContainer;
