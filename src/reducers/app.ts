@@ -3,15 +3,16 @@ import {actionType} from './types'
 
 export interface State {
     state: string,
-    name:string,
-    count:number,
+    name: string,
+    count: number,
     error?: {message:string},
 }
 
 const setState = (state: State, type:string): State => {
     return {...state,state:stripNS(type)}
 }
-const initState: State = {state:"INITIAL",
+const initState: State = {
+    state:"INITIAL",
     name:"not set",
     count:0,
 }
